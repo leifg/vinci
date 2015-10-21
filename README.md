@@ -1,5 +1,7 @@
 # Vinci
 
+[![Build Status](https://circleci.com/gh/leifg/vinci.svg?style=shield)](https://circleci.com/gh/leifg/vinci)
+
 **DISCLAIMER:** Under heavy development.
 
 This library is a general purpose client for JSON APIs. Ideally it will be possible just to configure your API and then go crazy.

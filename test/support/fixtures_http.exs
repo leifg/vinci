@@ -1,4 +1,5 @@
-defmodule Vinci.InMemory do
+defmodule Vinci.Http.FixturesHttp do
+  @behaviour Vinci.Http
   @endpoint "http://apisaurus"
 
   def request(:get, "#{@endpoint}/all", %{}) do

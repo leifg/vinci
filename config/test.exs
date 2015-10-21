@@ -1,6 +1,6 @@
 use Mix.Config
 
-config :vinci, :http_client, Vinci.InMemory
+config :vinci, :http_client, Vinci.Http.FixturesHttp
 
 config :vinci, :apisaurus, %{
   endpoint: "http://apisaurus",

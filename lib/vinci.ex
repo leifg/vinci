@@ -4,7 +4,7 @@ defmodule Vinci do
 
     { url, params } = Vinci.Url.modify(api_config[:endpoint] <> route[:path], params)
 
-    {:ok, parsed_response} = apply(http_client, route[:method], [url, params])
+    {:ok, parsed_response} = http_client.request(route[:method], url, params)
       |> Poison.decode(as: route[:result])
     parsed_response
   end

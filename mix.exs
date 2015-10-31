@@ -20,6 +20,7 @@ defmodule Vinci.Mixfile do
   defp deps do
     [
       {:poison, "~> 1.5"},
+      {:httpoison, "~> 0.7"},
       {:mix_test_watch, "~> 0.2", only: :dev},
     ]
   end

@@ -1,5 +1,3 @@
-# currently not in use
-
 defmodule Vinci.ConfigAgent do
   @name __MODULE__
 

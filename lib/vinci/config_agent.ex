@@ -5,13 +5,14 @@ defmodule Vinci.ConfigAgent do
     Agent.start_link(fn -> %{} end, name: @name)
   end
 
-  def add_config(key, config, name \\ @name) do
-    Agent.update(name, fn global_config ->
+  def add_config(key, config) do
+    start_link
+    Agent.update(@name, fn global_config ->
       Map.put(global_config, key, config)
     end)
   end
 
-  def get_config(key, name \\ @name) do
-    Agent.get(name, fn global_config -> Map.get(global_config, key) end)
+  def get_config(key) do
+    Agent.get(@name, fn global_config -> Map.get(global_config, key) end)
   end
 end

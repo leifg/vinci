@@ -1,3 +1,4 @@
 use Mix.Config
 
-config :vinci, :http_client, Vinci.Http.FixturesHttp
+config :vinci,
+  http_client: Vinci.Http.FixturesHttp

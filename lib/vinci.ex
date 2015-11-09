@@ -12,9 +12,12 @@ defmodule Vinci do
 
     { url, params } = Vinci.Url.modify(api_config[:endpoint] <> route[:path], params)
 
-    {:ok, parsed_response} = http_client.request(route[:method], url, params, headers)
-      |> Poison.decode(as: route[:result])
-    parsed_response
+    http_client.request(route[:method], url, params, headers)
+      |> process_response(route[:result])
+  end
+
+  defp process_response({:ok, %{body: json_response}}, struct) do
+    Poison.decode(json_response, as: struct)
   end
 
   defp http_client do
